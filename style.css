@@ -1,0 +1,293 @@
+:root {
+    --paper: #0c0c0e;
+    --ink: #e0e0e0;
+    --accent: #ff4d4d;
+    --glow: rgba(255, 77, 77, 0.2);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Special Elite', serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Full-screen Canvas */
+.canvas {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0c0c0e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* Texture Overlay */
+.canvas::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Background Ritual Marks */
+.ritual-mark {
+    position: fixed;
+    font-size: 150px;
+    opacity: 0.04;
+    color: var(--accent);
+    user-select: none;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.header-section {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 50px;
+    z-index: 2;
+    text-align: left;
+}
+
+.header-section h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: clamp(3rem, 10vw, 5rem);
+    color: var(--accent);
+    margin: 0;
+    line-height: 1;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+
+.tagline {
+    font-size: 1.4rem;
+    margin-top: 15px;
+    opacity: 0.8;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    z-index: 2;
+}
+
+/* Hand-Drawn Box Style */
+.hand-drawn-box {
+    position: relative;
+    background: #141419;
+    border: 2px solid var(--ink);
+    padding: 30px;
+    box-shadow: 8px 8px 0px var(--glow);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.hand-drawn-box:hover {
+    transform: translateY(-6px) rotate(0.4deg); 
+    box-shadow: 12px 12px 0px var(--glow);
+}
+
+.hand-drawn-box h2 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--accent);
+    border-bottom: 1px dashed rgba(255, 77, 77, 0.3);
+}
+
+.bio { border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; }
+.links { border-radius: 15px 225px 15px 255px/255px 15px 225px 15px; }
+.projects { border-radius: 20px 50px 30px 40px / 40px 30px 50px 20px; }
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-btn {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 12px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 5px 15px 5px 10px;
+    transition: background 0.2s, transform 0.2s ease-out;
+    background: transparent;
+    font-family: 'Special Elite', serif;
+}
+
+.social-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    transform: translateX(8px) rotate(-1deg);
+}
+
+/* Project Items */
+.project-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted rgba(255, 77, 77, 0.2);
+}
+
+.project-item strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Music Widget */
+.music-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.music-toggle {
+    background: #141419;
+    border: 2px solid var(--accent);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    color: var(--accent);
+    border-radius: 50px 10px 40px 15px;
+    box-shadow: 4px 4px 0px var(--glow);
+    transition: transform 0.2s ease-out;
+    user-select: none;
+    will-change: transform;
+}
+
+.music-toggle:hover {
+    transform: scale(1.05) rotate(-1.5deg);
+}
+
+.music-menu {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    background: #141419;
+    border: 2px solid var(--ink);
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px 40px 10px 30px;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.5);
+    display: none;
+    z-index: 101;
+}
+
+.music-menu.active {
+    display: block;
+    animation: popIn 0.2s ease-out forwards;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(10px) rotate(2deg); }
+    to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+.now-playing {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.now-playing .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.now-playing .title {
+    font-weight: bold;
+    color: #fff;
+}
+
+.track-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Grunge Scrollbar */
+.track-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.track-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.track-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.track-item {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s, transform 0.2s ease-out;
+    border-radius: 8px;
+}
+
+.track-item:hover {
+    background: rgba(255, 77, 77, 0.1);
+    transform: translateX(4px) rotate(0.5deg);
+}
+
+.track-cover {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--accent);
+    border-radius: 8px 3px 10px 4px;
+    object-fit: cover;
+}
+
+.track-name {
+    color: #fff;
+}
+
+/* Footer */
+.contact-footer {
+    margin-top: 80px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 0.9rem;
+    padding-bottom: 40px;
+    z-index: 2;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .canvas { padding: 40px 15px; }
+    .grid-layout { grid-template-columns: 1fr; }
+    .music-widget { bottom: 20px; left: 20px; }
+}
