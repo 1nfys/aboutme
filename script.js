@@ -73,20 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('musicToggle');
     const menu = document.getElementById('musicMenu');
 
-    // Toggle Music Menu
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
         menu.classList.toggle('active');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
             menu.classList.remove('active');
         }
     });
 
-    // Initial render
     renderMusicWidget();
 });
 
@@ -115,13 +112,12 @@ async function renderMusicWidget() {
     const trackListContainer = document.querySelector('.track-list');
     if (!trackListContainer) return;
 
-    // Loading state
     trackListContainer.innerHTML = '<li class="track-item" style="opacity: 0.5;">Loading tracks...</li>';
 
     const trackDataPromises = spotifyTracks.map(trackObj => fetchSpotifyData(trackObj));
     const tracks = await Promise.all(trackDataPromises);
 
-    trackListContainer.innerHTML = ''; // Clear existing
+    trackListContainer.innerHTML = ''; 
 
     tracks.forEach(track => {
         if (!track) return;
