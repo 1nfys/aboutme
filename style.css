@@ -34,7 +34,7 @@ body, html {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-image: url("src/stardust.png");
     opacity: 0.1;
     pointer-events: none;
     z-index: 10;
@@ -142,11 +142,27 @@ body, html {
     border-bottom: 1px dotted rgba(255, 77, 77, 0.2);
 }
 
+.project-link {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+    transition: transform 0.2s;
+}
+
+.project-link:hover {
+    transform: translateX(4px);
+}
+
+.project-link:hover strong {
+    color: var(--accent);
+}
+
 .project-item strong {
     display: block;
     color: #ffffff;
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    transition: color 0.2s;
 }
 
 .music-widget {
