@@ -1,70 +1,123 @@
+const projects = [
+    {
+        title: "Gemini bot",
+        url: "https://github.com/1nfys/geminibot",
+        description: "ai bot for delta chat when white lists is on",
+    },
+    {
+        title: "about me",
+        url: "https://github.com/1nfys/aboutme",
+        description: "ur here",
+    },
+    {
+        title: "SteamTierList",
+        url: "https://github.com/1nfys/SteamTierList",
+        description: "free manual/ai tool to make tier list from your library based on url/steam id",
+    },
+    {
+        title: "gasterwriter",
+        url: "https://github.com/1nfys/gasterwriter",
+        description: "VERY INTRESTING programm to become a gaster",
+    },
+    {
+        title: "LayerMicaUI-my-adaptation",
+        url: "https://github.com/1nfys/LayerMicaUI-my-adaptation",
+        description: "my recreation of LayerMicaUI",
+    },
+    {
+        title: "MIDI2VIPI",
+        url: "https://github.com/1nfys/MIDI2VIPI",
+        description: "tool to play on virtual piano anywhere from midi file",
+    }
+];
+
 const spotifyTracks = [
-    { 
-        url: "https://open.spotify.com/track/5XxLpnFrklJJgs4rU8OJs0?si=3656af32c7b04c73", 
-        artist: "Paperkitty" 
-    },
-    { 
-        url: "https://open.spotify.com/track/3OyOAwSpQpPOeuj4MBUgGs?si=332c4c08e2f1438e", 
-        artist: "Block Tales, nicopatty, Kyles45678" 
-    },
-    { 
-        url: "https://open.spotify.com/track/64SL9JlYfvhsmjdOkiWjQG?si=c20dd89b87374b85", 
-        artist: "DIGITAL DESCENDANT, Key After Key" 
-    },
-    { 
-        url: "https://open.spotify.com/track/3TS9xVvteeZbCAlzgLDAHD?si=fee65de85d224e36", 
-        artist: "boggio, Key After Key" 
-    },
-    { 
-        url: "https://open.spotify.com/track/2B6g6v69ozghZwmValTb6Q?si=3e77405f6e924240", 
-        artist: "boggio, Key After Key" 
+    {
+        url: "https://open.spotify.com/track/1LF2T0aaKNNlc34Sv1BPcN",
+        artist: "DIGITAL DESCENDANT, aerokii"
     },
     {
-        url: "https://open.spotify.com/track/1Ywf54xuDO3Vuwi09nwJse?si=941cff7ab961475e",
+        url: "https://open.spotify.com/track/5Q4VKg0jcZUHcvJYQIPPK4",
+        artist: "DIGITAL DESCENDANT, aerokii"
+    },
+    {
+        url: "https://open.spotify.com/track/71OKcekoasTyTmBsrnSrKu",
+        artist: "DIGITAL DESCENDANT"
+    },
+    {
+        url: "https://open.spotify.com/track/7nLkjqKtWQgeo1LTJ8rfPZ",
+        artist: "DIGITAL DESCENDANT"
+    },
+    {
+        url: "https://open.spotify.com/track/6NZQybbow5SALJhjwAOWVB",
+        artist: "PaperKitty"
+    },
+    {
+        url: "https://open.spotify.com/track/5XxLpnFrklJJgs4rU8OJs0",
+        artist: "PaperKitty"
+    },
+    {
+        url: "https://open.spotify.com/track/3OyOAwSpQpPOeuj4MBUgGs",
+        artist: "Block Tales, nicopatty, Kyles45678"
+    },
+    {
+        url: "https://open.spotify.com/track/64SL9JlYfvhsmjdOkiWjQG",
+        artist: "DIGITAL DESCENDANT, Key After Key"
+    },
+    {
+        url: "https://open.spotify.com/track/3TS9xVvteeZbCAlzgLDAHD",
+        artist: "boggio, Key After Key"
+    },
+    {
+        url: "https://open.spotify.com/track/2B6g6v69ozghZwmValTb6Q",
+        artist: "boggio, Key After Key"
+    },
+    {
+        url: "https://open.spotify.com/track/1Ywf54xuDO3Vuwi09nwJse",
         artist: "surreal"
     },
     {
-        url: "https://open.spotify.com/track/2VaK0HRf6wG3a2RlcmV0xy?si=e2d628b3a6d04c0a",
+        url: "https://open.spotify.com/track/2VaK0HRf6wG3a2RlcmV0xy",
         artist: "surreal"
     },
     {
-        url: "https://open.spotify.com/track/2f7pUDR1lu7ATEBo1LUDZb?si=68dc5b22b26d451a",
+        url: "https://open.spotify.com/track/2f7pUDR1lu7ATEBo1LUDZb",
         artist: "MSR, NoteBlock, MNS"
     },
     {
-        url: "https://open.spotify.com/track/3HenQMP5vFMPkyOMvMXtVd?si=8a27e809809f41f1",
+        url: "https://open.spotify.com/track/3HenQMP5vFMPkyOMvMXtVd",
         artist: "MSR, NoteBlock, MNS"
     },
     {
-        url: "https://open.spotify.com/track/52vIPidjyEemoxnFFtZ1Kk?si=8863e0b381704968",
+        url: "https://open.spotify.com/track/52vIPidjyEemoxnFFtZ1Kk",
         artist: "River Boy"
     },
     {
-        url: "https://open.spotify.com/track/3KkeAOtLOXU8qsrhTHiFip?si=9b516eb7d2b44868",
+        url: "https://open.spotify.com/track/3KkeAOtLOXU8qsrhTHiFip",
         artist: "Omori"
     },
     {
-        url: "https://open.spotify.com/track/1tLy0KzjBLqbdYrp2Plb9p?si=32a74250092e42ab",
+        url: "https://open.spotify.com/track/1tLy0KzjBLqbdYrp2Plb9p",
         artist: "Omori"
     },
     {
-        url: "https://open.spotify.com/track/54shhL9vif2iwUXg0lNpQX?si=e646faa41fd843c5",
+        url: "https://open.spotify.com/track/54shhL9vif2iwUXg0lNpQX",
         artist: "Omori"
     },
     {
-        url: "https://open.spotify.com/track/2Ow8YPaRkaHd5Cr9zGpoHC?si=a9cdfecd648e46ab",
+        url: "https://open.spotify.com/track/2Ow8YPaRkaHd5Cr9zGpoHC",
         artist: "Omori"
     },
     {
-        url: "https://open.spotify.com/track/3TcArgDnTVihS8I1FHF0ns?si=0ce2ecfdbf644ab1",
+        url: "https://open.spotify.com/track/3TcArgDnTVihS8I1FHF0ns",
         artist: "Heaven Pierce Her"
     },
     {
-        url: "https://open.spotify.com/track/1DDIprP7j8GvwjWyk1bIEF?si=7bef0f7ad41541f5",
+        url: "https://open.spotify.com/track/1DDIprP7j8GvwjWyk1bIEF",
         artist: "Studio Thumpy Puppy"
     },
     {
-        url: "https://open.spotify.com/track/4O0JVgOSsdJrj6Tao1ViEY?si=e5ce949d848f4064",
+        url: "https://open.spotify.com/track/4O0JVgOSsdJrj6Tao1ViEY",
         artist: "Toby Fox, Laura Shigihara"
     }
 ];
@@ -84,8 +137,86 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    renderProjects();
     renderMusicWidget();
 });
+
+let currentPage = 0;
+let transitionInterval = null;
+
+function renderProjects() {
+    const projectList = document.getElementById('projectList');
+    if (!projectList) return;
+
+    projectList.innerHTML = `
+        <div class="project-item" id="proj-0"></div>
+        <div class="project-item" id="proj-1"></div>
+        <div class="project-item" id="proj-2"></div>
+    `;
+
+    updateProjectSlots();
+    startTransitionInterval();
+}
+
+function updateProjectSlots() {
+    const itemsPerPage = 3;
+    for (let i = 0; i < itemsPerPage; i++) {
+        const slot = document.getElementById(`proj-${i}`);
+        if (!slot) continue;
+
+        const project = projects[currentPage * itemsPerPage + i];
+        if (project) {
+            slot.innerHTML = `
+                <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <strong>${project.title}</strong>
+                </a>
+                <span>${project.description}</span>
+            `;
+            slot.style.visibility = 'visible';
+            slot.style.borderBottom = '1px dotted rgba(255, 77, 77, 0.2)';
+        } else {
+            slot.innerHTML = `
+                <a class="project-link"><strong>&nbsp;</strong></a>
+                <span>&nbsp;</span>
+            `;
+            slot.style.visibility = 'hidden';
+            slot.style.borderBottom = 'none';
+        }
+    }
+}
+
+function startTransitionInterval() {
+    if (transitionInterval) clearInterval(transitionInterval);
+
+    const totalPages = Math.ceil(projects.length / 3);
+    if (totalPages <= 1) return;
+
+    transitionInterval = setInterval(() => {
+        const item0 = document.getElementById('proj-0');
+        const item1 = document.getElementById('proj-1');
+        const item2 = document.getElementById('proj-2');
+        if (!item0 || !item1 || !item2) return;
+
+        item0.classList.add('slide-out');
+        item1.classList.add('slide-out');
+        item2.classList.add('slide-out');
+
+        setTimeout(() => {
+            currentPage = (currentPage + 1) % totalPages;
+            updateProjectSlots();
+
+            item0.classList.add('slide-in-prepare');
+            item1.classList.add('slide-in-prepare');
+            item2.classList.add('slide-in-prepare');
+
+            item0.offsetHeight;
+
+            item0.classList.remove('slide-out', 'slide-in-prepare');
+            item1.classList.remove('slide-out', 'slide-in-prepare');
+            item2.classList.remove('slide-out', 'slide-in-prepare');
+        }, 550);
+    }, 5000);
+}
 
 async function fetchSpotifyData(trackObj) {
     const oembedUrl = `https://open.spotify.com/oembed?url=${encodeURIComponent(trackObj.url)}`;
@@ -95,7 +226,7 @@ async function fetchSpotifyData(trackObj) {
             throw new Error(`Spotify oEmbed request failed with status ${response.status}`);
         }
         const data = await response.json();
-        
+
         return {
             name: data.title || "Unknown Track",
             artist: trackObj.artist || "Unknown Artist",
@@ -117,7 +248,7 @@ async function renderMusicWidget() {
     const trackDataPromises = spotifyTracks.map(trackObj => fetchSpotifyData(trackObj));
     const tracks = await Promise.all(trackDataPromises);
 
-    trackListContainer.innerHTML = ''; 
+    trackListContainer.innerHTML = '';
 
     tracks.forEach(track => {
         if (!track) return;
