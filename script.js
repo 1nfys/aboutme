@@ -137,12 +137,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Pause button
+    const pauseBtn = document.getElementById('pauseBtn');
+    const pauseIcon = document.getElementById('pauseIcon');
+    if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+            isPaused = !isPaused;
+            if (isPaused) {
+                clearInterval(transitionInterval);
+                transitionInterval = null;
+                pauseIcon.textContent = '\u25b6';
+                pauseBtn.classList.add('paused');
+            } else {
+                pauseIcon.textContent = '\u23f8';
+                pauseBtn.classList.remove('paused');
+                startTransitionInterval();
+            }
+        });
+    }
+
     renderProjects();
     renderMusicWidget();
 });
 
 let currentPage = 0;
 let transitionInterval = null;
+let isPaused = false;
 
 function renderProjects() {
     const projectList = document.getElementById('projectList');
@@ -164,21 +184,39 @@ function updateProjectSlots() {
         const slot = document.getElementById(`proj-${i}`);
         if (!slot) continue;
 
-        const project = projects[currentPage * itemsPerPage + i];
+        const projectIndex = currentPage * itemsPerPage + i;
+        const project = (projectIndex >= 0 && projectIndex < projects.length) ? projects.at(projectIndex) : null;
+        slot.innerHTML = '';
         if (project) {
-            slot.innerHTML = `
-                <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
-                    <strong>${project.title}</strong>
-                </a>
-                <span>${project.description}</span>
-            `;
+            const a = document.createElement('a');
+            a.href = project.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className = 'project-link';
+            
+            const strong = document.createElement('strong');
+            strong.textContent = project.title;
+            a.appendChild(strong);
+            
+            const span = document.createElement('span');
+            span.textContent = project.description;
+            
+            slot.appendChild(a);
+            slot.appendChild(span);
             slot.style.visibility = 'visible';
-            slot.style.borderBottom = '1px dotted rgba(255, 77, 77, 0.2)';
+            slot.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
         } else {
-            slot.innerHTML = `
-                <a class="project-link"><strong>&nbsp;</strong></a>
-                <span>&nbsp;</span>
-            `;
+            const a = document.createElement('a');
+            a.className = 'project-link';
+            const strong = document.createElement('strong');
+            strong.textContent = '\u00a0';
+            a.appendChild(strong);
+            
+            const span = document.createElement('span');
+            span.textContent = '\u00a0';
+            
+            slot.appendChild(a);
+            slot.appendChild(span);
             slot.style.visibility = 'hidden';
             slot.style.borderBottom = 'none';
         }
@@ -186,6 +224,7 @@ function updateProjectSlots() {
 }
 
 function startTransitionInterval() {
+    if (isPaused) return;
     if (transitionInterval) clearInterval(transitionInterval);
 
     const totalPages = Math.ceil(projects.length / 3);
@@ -258,13 +297,35 @@ async function renderMusicWidget() {
         li.style.cursor = 'pointer';
         li.onclick = () => window.open(track.link, '_blank');
 
-        li.innerHTML = `
-            <img src="${track.cover}" alt="${track.name} cover" class="track-cover">
-            <div class="track-info" style="display: flex; flex-direction: column; gap: 2px;">
-                <span class="track-name" style="font-weight: bold; color: #fff;">${track.name}</span>
-                <span class="track-artist" style="font-size: 0.8rem; color: var(--accent); opacity: 0.9;">${track.artist}</span>
-            </div>
-        `;
+        const img = document.createElement('img');
+        img.src = track.cover;
+        img.alt = `${track.name} cover`;
+        img.className = 'track-cover';
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'track-info';
+        infoDiv.style.display = 'flex';
+        infoDiv.style.flexDirection = 'column';
+        infoDiv.style.gap = '2px';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'track-name';
+        nameSpan.style.fontWeight = 'bold';
+        nameSpan.style.color = '#fff';
+        nameSpan.textContent = track.name;
+
+        const artistSpan = document.createElement('span');
+        artistSpan.className = 'track-artist';
+        artistSpan.style.fontSize = '0.8rem';
+        artistSpan.style.color = 'var(--accent)';
+        artistSpan.style.opacity = '0.9';
+        artistSpan.textContent = track.artist;
+
+        infoDiv.appendChild(nameSpan);
+        infoDiv.appendChild(artistSpan);
+
+        li.appendChild(img);
+        li.appendChild(infoDiv);
         trackListContainer.appendChild(li);
     });
 }
