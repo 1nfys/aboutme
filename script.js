@@ -31,95 +31,33 @@ const projects = [
     }
 ];
 
-const spotifyTracks = [
-    {
-        url: "https://open.spotify.com/track/1LF2T0aaKNNlc34Sv1BPcN",
-        artist: "DIGITAL DESCENDANT, aerokii"
-    },
-    {
-        url: "https://open.spotify.com/track/5Q4VKg0jcZUHcvJYQIPPK4",
-        artist: "DIGITAL DESCENDANT, aerokii"
-    },
-    {
-        url: "https://open.spotify.com/track/71OKcekoasTyTmBsrnSrKu",
-        artist: "DIGITAL DESCENDANT"
-    },
-    {
-        url: "https://open.spotify.com/track/7nLkjqKtWQgeo1LTJ8rfPZ",
-        artist: "DIGITAL DESCENDANT"
-    },
-    {
-        url: "https://open.spotify.com/track/6NZQybbow5SALJhjwAOWVB",
-        artist: "PaperKitty"
-    },
-    {
-        url: "https://open.spotify.com/track/5XxLpnFrklJJgs4rU8OJs0",
-        artist: "PaperKitty"
-    },
-    {
-        url: "https://open.spotify.com/track/3OyOAwSpQpPOeuj4MBUgGs",
-        artist: "Block Tales, nicopatty, Kyles45678"
-    },
-    {
-        url: "https://open.spotify.com/track/64SL9JlYfvhsmjdOkiWjQG",
-        artist: "DIGITAL DESCENDANT, Key After Key"
-    },
-    {
-        url: "https://open.spotify.com/track/3TS9xVvteeZbCAlzgLDAHD",
-        artist: "boggio, Key After Key"
-    },
-    {
-        url: "https://open.spotify.com/track/2B6g6v69ozghZwmValTb6Q",
-        artist: "boggio, Key After Key"
-    },
-    {
-        url: "https://open.spotify.com/track/1Ywf54xuDO3Vuwi09nwJse",
-        artist: "surreal"
-    },
-    {
-        url: "https://open.spotify.com/track/2VaK0HRf6wG3a2RlcmV0xy",
-        artist: "surreal"
-    },
-    {
-        url: "https://open.spotify.com/track/2f7pUDR1lu7ATEBo1LUDZb",
-        artist: "MSR, NoteBlock, MNS"
-    },
-    {
-        url: "https://open.spotify.com/track/3HenQMP5vFMPkyOMvMXtVd",
-        artist: "MSR, NoteBlock, MNS"
-    },
-    {
-        url: "https://open.spotify.com/track/52vIPidjyEemoxnFFtZ1Kk",
-        artist: "River Boy"
-    },
-    {
-        url: "https://open.spotify.com/track/3KkeAOtLOXU8qsrhTHiFip",
-        artist: "Omori"
-    },
-    {
-        url: "https://open.spotify.com/track/1tLy0KzjBLqbdYrp2Plb9p",
-        artist: "Omori"
-    },
-    {
-        url: "https://open.spotify.com/track/54shhL9vif2iwUXg0lNpQX",
-        artist: "Omori"
-    },
-    {
-        url: "https://open.spotify.com/track/2Ow8YPaRkaHd5Cr9zGpoHC",
-        artist: "Omori"
-    },
-    {
-        url: "https://open.spotify.com/track/3TcArgDnTVihS8I1FHF0ns",
-        artist: "Heaven Pierce Her"
-    },
-    {
-        url: "https://open.spotify.com/track/1DDIprP7j8GvwjWyk1bIEF",
-        artist: "Studio Thumpy Puppy"
-    },
-    {
-        url: "https://open.spotify.com/track/4O0JVgOSsdJrj6Tao1ViEY",
-        artist: "Toby Fox, Laura Shigihara"
-    }
+const soundCloudTracks = [
+    "https://soundcloud.com/treaty-670147814/smile-at-my-cursed-dream-lady-ethereals-theme",
+    "https://soundcloud.com/uploadyellow/a-mothers-love",
+    "https://soundcloud.com/etaoinshrdlu1997/mike-boss",
+    "https://soundcloud.com/pprkty/sugarcube-hailstorm",
+    "https://soundcloud.com/treaty-670147814/long-awaited-death-jis-theme",
+    "https://soundcloud.com/surreal012/penumbra-phantasm-v3",
+    "https://soundcloud.com/treaty-670147814/staircase-of-a-thousand-steps",
+    "https://soundcloud.com/xcipo-nilex/omori-ost-012-trees",
+    "https://soundcloud.com/7gb0/six-feet-under",
+    "https://soundcloud.com/digital-descendant/wont-you-hear-my-symphony",
+    "https://soundcloud.com/tobyfox-music/black-knife",
+    "https://soundcloud.com/xcipo-nilex/omori-ost-118-swallow-hollow",
+    "https://soundcloud.com/ironicepee/in-stars-and-time-ost-how-can-you-help-me-stardust",
+    "https://soundcloud.com/user-910734203/komodo-dragon-block-tales",
+    "https://soundcloud.com/sexballs/12-altars-of-apostasy-incl",
+    "https://soundcloud.com/81syv4b8op5i/swinging-with-ghost",
+    "https://soundcloud.com/xcipo-nilex/omori-ost-117-whale-whale-whale",
+    "https://soundcloud.com/surreal012/your-fault",
+    "https://soundcloud.com/xcipo-nilex/omori-ost-112-h20hcl",
+    "https://soundcloud.com/xcipo-nilex/omori-ost-074-pyrefly-forest-cats-cradle",
+    "https://soundcloud.com/me_i_think/loop-hangout-in-stars-and-time",
+    "https://soundcloud.com/surreal012/nightmare",
+    "https://soundcloud.com/digital-descendant/stars-melody?in=digital-descendant/sets/voyager",
+    "https://soundcloud.com/digital-descendant/a-lullaby-to-the-heat-death-of?in=digital-descendant/sets/voyager",
+    "https://soundcloud.com/81syv4b8op5i/waltz-of-wandering",
+    "https://soundcloud.com/digital-descendant/pizza-galaxy?in=digital-descendant/sets/voyager"
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -137,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Pause button
     const pauseBtn = document.getElementById('pauseBtn');
     const pauseIcon = document.getElementById('pauseIcon');
     if (pauseBtn) {
@@ -193,14 +130,14 @@ function updateProjectSlots() {
             a.target = '_blank';
             a.rel = 'noopener noreferrer';
             a.className = 'project-link';
-            
+
             const strong = document.createElement('strong');
             strong.textContent = project.title;
             a.appendChild(strong);
-            
+
             const span = document.createElement('span');
             span.textContent = project.description;
-            
+
             slot.appendChild(a);
             slot.appendChild(span);
             slot.style.visibility = 'visible';
@@ -211,10 +148,10 @@ function updateProjectSlots() {
             const strong = document.createElement('strong');
             strong.textContent = '\u00a0';
             a.appendChild(strong);
-            
+
             const span = document.createElement('span');
             span.textContent = '\u00a0';
-            
+
             slot.appendChild(a);
             slot.appendChild(span);
             slot.style.visibility = 'hidden';
@@ -257,23 +194,28 @@ function startTransitionInterval() {
     }, 5000);
 }
 
-async function fetchSpotifyData(trackObj) {
-    const oembedUrl = `https://open.spotify.com/oembed?url=${encodeURIComponent(trackObj.url)}`;
+async function fetchSoundCloudData(trackUrl) {
+    const oembedUrl = `https://soundcloud.com/oembed?format=json&url=${encodeURIComponent(trackUrl)}`;
     try {
         const response = await fetch(oembedUrl);
         if (!response.ok) {
-            throw new Error(`Spotify oEmbed request failed with status ${response.status}`);
+            throw new Error(`SoundCloud oEmbed request failed with status ${response.status}`);
         }
         const data = await response.json();
+        let name = data.title || "Unknown Track";
+        const artist = data.author_name || "Unknown Artist";
+        if (data.author_name && name.endsWith(` by ${data.author_name}`)) {
+            name = name.slice(0, -(data.author_name.length + 4));
+        }
 
         return {
-            name: data.title || "Unknown Track",
-            artist: trackObj.artist || "Unknown Artist",
+            name: name,
+            artist: artist,
             cover: data.thumbnail_url,
-            link: trackObj.url
+            link: trackUrl
         };
     } catch (error) {
-        console.error("Error fetching Spotify data:", error);
+        console.error("Error fetching SoundCloud data:", error);
         return null;
     }
 }
@@ -284,7 +226,7 @@ async function renderMusicWidget() {
 
     trackListContainer.innerHTML = '<li class="track-item" style="opacity: 0.5;">Loading tracks...</li>';
 
-    const trackDataPromises = spotifyTracks.map(trackObj => fetchSpotifyData(trackObj));
+    const trackDataPromises = soundCloudTracks.map(trackUrl => fetchSoundCloudData(trackUrl));
     const tracks = await Promise.all(trackDataPromises);
 
     trackListContainer.innerHTML = '';
