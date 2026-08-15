@@ -28,6 +28,11 @@ const projects = [
         title: "MIDI2VIPI",
         url: "https://github.com/1nfys/MIDI2VIPI",
         description: "tool to play on virtual piano anywhere from midi file",
+    },
+    {
+        title: "ChestProfile",
+        url: "https://github.com/1nfys/chestprofile",
+        description: "storage layouts with phantom-item rendering and quick transfers for containers",
     }
 ];
 
@@ -199,7 +204,8 @@ async function fetchSoundCloudData(trackUrl) {
     try {
         const response = await fetch(oembedUrl);
         if (!response.ok) {
-            throw new Error(`SoundCloud oEmbed request failed with status ${response.status}`);
+            console.error(`SoundCloud oEmbed request failed with status ${response.status}`);
+            return null;
         }
         const data = await response.json();
         let name = data.title || "Unknown Track";
